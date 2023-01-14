@@ -21,7 +21,7 @@
             android:text=""
             android:lines="2"
             android:maxLines="2"
-            android:textColor="@color/white"
+            android:textColor="@color/iceberg"
             android:textAlignment="textEnd"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/resultsTV"
@@ -35,7 +35,7 @@
             android:text=""
             android:lines="1"
             android:maxLines="1"
-            android:textColor="@color/white"
+            android:textColor="@color/iceberg"
             android:textAlignment="textEnd"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,12 +48,12 @@
         style="@style/buttonRaw">
         <Button
             style="@style/buttonNumber"
-            android:textColor="@color/red"
+            android:textColor="@color/conifer"
             android:onClick="allClearAction"
             android:text="AC"/>
         <Button
             style="@style/buttonNumber"
-            android:textColor="@color/red"
+            android:textColor="@color/conifer"
             android:onClick="backSpaceAction"
             android:text="⌫"/>
         <Button
@@ -71,6 +71,7 @@
         <Button
             style="@style/buttonNumber"
             android:text="8"/>
+
         <Button
             style="@style/buttonNumber"
             android:text="9" />
@@ -119,7 +120,7 @@
         <Button
             style="@style/buttonNumber"
             android:layout_weight="2"
-            android:background="@color/orange"
+            android:background="@color/blueDianne"
             android:textSize="40sp"
             android:onClick="equalsAction"
             android:text="=" />

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.MiniCalc" parent="Theme.AppCompat">
 
-        <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryVariant">@color/almostBlack</item>
+        <item name="colorPrimary">@color/jungleGreen</item>
+        <item name="colorPrimaryVariant">@color/blueDianne</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

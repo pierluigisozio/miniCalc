@@ -3,6 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#F00</color>
-    <color name="almostBlack">#222</color>
-    <color name="orange">#FF8c00</color>
+    <color name="almostBlack">#233</color>
+    <color name="blueDianne">#1F5D5E</color>
+    <color name="jungleGreen">#25B386</color>
+    <color name="conifer">#9ce451</color>
+    <color name="iceberg">#cce1f4</color>
+
 </resources>
