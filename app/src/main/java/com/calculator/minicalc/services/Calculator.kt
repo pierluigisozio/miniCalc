@@ -1,76 +1,71 @@
 package com.calculator.minicalc.services
 
-import kotlinx.android.synthetic.main.activity_main.*
-
-object CalculateResult {
-     fun calculateResult(expression : CharSequence): String {
+object Calculator {
+    fun calculateResult(expression: CharSequence): String {
         val digitsOperators = digitsOperators(expression)
-        if(digitsOperators.isEmpty()) return ""
+        if (digitsOperators.isEmpty()) return ""
 
         val timesDivision = timesDivisionCalculate(digitsOperators)
-        if(timesDivision.isEmpty()) return ""
+        if (timesDivision.isEmpty()) return ""
 
         val result = addSubractCalculate(timesDivision)
 
         return result.toString()
     }
 
-    private fun addSubractCalculate(passedList: MutableList<Any>) : Float {
+    private fun addSubractCalculate(passedList: MutableList<Any>): Float {
         var result = passedList[0] as Float
 
-        for (i in passedList.indices){
-            if (passedList[i] is Char && i != passedList.lastIndex ){
+        for (i in passedList.indices) {
+            if (passedList[i] is Char && i != passedList.lastIndex) {
                 val operator = passedList[i]
-                val nextDigit = passedList[i+1] as Float
-                if (operator == '+'){
+                val nextDigit = passedList[i + 1] as Float
+                if (operator == '+') {
                     result += nextDigit
                 }
-                if (operator == '-'){
+                if (operator == '-') {
                     result -= nextDigit
                 }
             }
         }
 
         return result
-
     }
 
     private fun timesDivisionCalculate(passedList: MutableList<Any>): MutableList<Any> {
         var list = passedList
-        while (list.contains('x') || list.contains('/')){
+        while (list.contains('x') || list.contains('/')) {
             list = calcTimesDiv(list)
         }
 
         return list
-
     }
 
-    private fun calcTimesDiv(passedList: MutableList<Any>) : MutableList<Any>{
+    private fun calcTimesDiv(passedList: MutableList<Any>): MutableList<Any> {
         val newList = mutableListOf<Any>()
         var restartIndex = passedList.size
 
-        for (i in passedList.indices){
-            if (passedList[i] is Char && i != passedList.lastIndex && i<restartIndex){
+        for (i in passedList.indices) {
+            if (passedList[i] is Char && i != passedList.lastIndex && i < restartIndex) {
                 val operator = passedList[i]
                 val prevDigit = passedList[i - 1] as Float
                 val nextDigit = passedList[i + 1] as Float
-                when(operator){
-                    'x' ->{
+                when (operator) {
+                    'x' -> {
                         newList.add(prevDigit * nextDigit)
-                        restartIndex = i+1
+                        restartIndex = i + 1
                     }
-                    '/' ->{
+                    '/' -> {
                         newList.add(prevDigit / nextDigit)
-                        restartIndex = i+1
-
+                        restartIndex = i + 1
                     }
-                    else ->{
+                    else -> {
                         newList.add(prevDigit)
                         newList.add(operator)
                     }
                 }
             }
-            if(i > restartIndex){
+            if (i > restartIndex) {
                 newList.add(passedList[i])
             }
         }
@@ -81,8 +76,8 @@ object CalculateResult {
     private fun digitsOperators(expression: CharSequence): MutableList<Any> {
         val list = mutableListOf<Any>()
         var currentDigit = ""
-        for (character in expression){
-            if(character.isDigit() || character == '.'){
+        for (character in expression) {
+            if (character.isDigit() || character == '.') {
                 currentDigit += character
             } else {
                 list.add(currentDigit.toFloat())
@@ -91,14 +86,9 @@ object CalculateResult {
             }
         }
 
-        if(currentDigit != ""){
+        if (currentDigit != "") {
             list.add(currentDigit.toFloat())
         }
         return list
     }
-
-
-
-
-
 }

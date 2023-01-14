@@ -1,11 +1,12 @@
 package com.calculator.minicalc
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import com.calculator.minicalc.services.CalculateResult
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import com.calculator.minicalc.services.Calculator
+import kotlinx.android.synthetic.main.activity_main.resultsTV
+import kotlinx.android.synthetic.main.activity_main.workingsTV
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     fun numberAction(view: View) {
-        if (view is Button){
-            if (view.text == "."){
-                if(canAddDecimal) {
+        if (view is Button) {
+            if (view.text == ".") {
+                if (canAddDecimal) {
                     workingsTV.append(view.text)
                 }
                 canAddDecimal = false
@@ -31,30 +32,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun operationAction(view: View) {
-        if (view is Button && canAddOperation){
+        if (view is Button && canAddOperation) {
             workingsTV.append(view.text)
             canAddOperation = false
             canAddDecimal = true
         }
     }
 
-    fun allClearAction(view: View) {
+    fun allClearAction() {
         workingsTV.text = ""
         resultsTV.text = ""
     }
 
-    fun backSpaceAction(view: View) {
+    fun backSpaceAction() {
         val length = workingsTV.length()
-        if (length > 0){
-            workingsTV.text = workingsTV.text.subSequence(0, length -1)
+        if (length > 0) {
+            workingsTV.text = workingsTV.text.subSequence(0, length - 1)
         }
     }
-    fun equalsAction(view: View) {
-        resultsTV.text = CalculateResult.calculateResult(workingsTV.text)
+    fun equalsAction() {
+        resultsTV.text = Calculator.calculateResult(workingsTV.text)
     }
-
-
-
-
-
 }
