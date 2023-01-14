@@ -1,0 +1,28 @@
+Giorno 1:
+
+Familiarizzare con Android Studio e creare un nuovo progetto utilizzando il template "Empty Activity"
+Familiarizzare con la documentazione ufficiale di Android e Kotlin
+Familiarizzare con Material Components for Android
+
+Giorno 2:
+
+Disegnare un layout base della calcolatrice
+Iniziare a creare la logica per le operazioni matematiche
+Iniziare a creare le funzionalità dell'interfaccia utente utilizzando Material Components
+
+Giorno 3:
+
+Continuare a lavorare sulla logica delle operazioni matematiche
+Continuare a lavorare sull'interfaccia utente
+Iniziare a testare l'applicazione su un emulatore o un dispositivo fisico
+
+Giorno 4:
+
+Continuare a testare e migliorare l'applicazione
+Risolvere eventuali problemi riscontrati durante i test
+Preparare l'applicazione per la pubblicazione su Google Play Store o altri negozi di app
+
+Giorno 5:
+
+Ultimi ritocchi e test finali
+Pubblicare l'applicazione
